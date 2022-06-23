@@ -5,7 +5,6 @@ import com.mhp.coding.challenges.dependency.inquiry.InquiryService
 import com.mhp.coding.challenges.dependency.notifications.EmailHandler
 import com.mhp.coding.challenges.dependency.notifications.PushNotificationHandler
 import com.ninjasquad.springmockk.SpykBean
-import io.mockk.verify
 import io.mockk.verifyAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
