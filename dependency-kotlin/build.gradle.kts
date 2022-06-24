@@ -37,9 +37,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
 
     dependencies {
-        implementation("javax.jms:javax.jms-api:2.0.1")
-        implementation("org.springframework:spring-jms:5.3.21")
-        implementation("org.springframework.boot:spring-boot-starter")
+        implementation("org.springframework.boot:spring-boot-starter-amqp:2.4.6")
         implementation("io.github.microutils:kotlin-logging:$kotlinlogger_version")
         testImplementation("org.springframework.boot:spring-boot-starter-test") {
             exclude(module = "mockito-core")
