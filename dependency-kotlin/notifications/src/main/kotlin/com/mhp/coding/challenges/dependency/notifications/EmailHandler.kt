@@ -10,7 +10,7 @@ private val logger = KotlinLogging.logger {}
 
 @Component
 class EmailHandler {
-    @RabbitListener(queues = ["myqueue"])
+    @RabbitListener(queues = ["queue"])
     fun sendEmail(inquiry: Inquiry) {
         logger.info {
             "Sending email for: $inquiry"

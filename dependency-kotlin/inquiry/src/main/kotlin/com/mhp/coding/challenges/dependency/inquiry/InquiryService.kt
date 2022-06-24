@@ -24,16 +24,16 @@ class InquiryService() {
 
         val context: ApplicationContext = AnnotationConfigApplicationContext(RabbitConfiguration::class.java)
         val template = context.getBean(AmqpTemplate::class.java)
-        template.convertAndSend("myqueue")
+        template.convertAndSend("queue", inquiry)
+        template.convertAndSend("queue2", inquiry)
     }
 
 }
-@Serializable
 data class Inquiry(
     var username: String,
     var recipient: String,
     var text: String,
-)
+) :java.io.Serializable
 
 @Configuration
 class RabbitConfiguration {
@@ -53,8 +53,13 @@ class RabbitConfiguration {
     }
 
     @Bean
-    fun myQueue(): Queue {
-        return Queue("myqueue")
+    fun queue(): Queue {
+        return Queue("queue",false)
     }
+    @Bean
+    fun queue2(): Queue {
+        return Queue("queue2", false)
+    }
+
 }
 

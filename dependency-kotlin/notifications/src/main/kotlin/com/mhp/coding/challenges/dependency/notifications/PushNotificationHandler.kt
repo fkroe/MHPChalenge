@@ -10,7 +10,7 @@ private val logger = KotlinLogging.logger {}
 
 @Component
 class PushNotificationHandler {
-    @RabbitListener(queues = ["myqueue"])
+    @RabbitListener(queues = ["queue2"])
     fun sendNotification(inquiry: Inquiry) {
 
         logger.info {
